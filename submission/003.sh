@@ -2,10 +2,10 @@
 
 # How many new outputs were created by block 123,456?
 
-# Simple way
-#bitcoin-cli getblockstats 123456 | jq .outs
+# simple way:
+# bitcoin-cli getblockstats 123456 | jq .outs
 
-# Less simple way
+# less simple way
 # get hash of block 123,456
 hash=$(bitcoin-cli getblockhash 123456)
 
