@@ -15,7 +15,7 @@ TRANSACTIONS=$(bitcoin-cli getblock $BLOCKHASH_SPENT | jq -r .tx[])
 # check each input on each transaction for a spend of the coinbase from 256,128
 for TXID in $TRANSACTIONS
 do
-    readarray -t INPUTS < <(bitcoin-cli getrawtransaction "$TXID" 1 | jq -c .vin[])
+    readarray -t INPUTS < <(bitcoin-cli getrawtransaction $TXID 1 | jq -c .vin[])
     
     for INPUT in "${INPUTS[@]}"
     do

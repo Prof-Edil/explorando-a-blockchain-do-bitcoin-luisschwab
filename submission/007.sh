@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Only one single output remains unspent from block 123,321. What address was it sent to?
+# Only a single output remains unspent from block 123,321. What address was it sent to?
 
 BLOCKHASH=$(bitcoin-cli getblockhash 123321)
 readarray -t TRANSACTIONS < <(bitcoin-cli getblock $BLOCKHASH | jq -r .tx[])
